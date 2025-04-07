@@ -18,18 +18,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-release-env
-
-      - name: Install OpenSSL and dependencies
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y pkg-config libssl-dev      
-
-      - name: Set OpenSSL environment variable
-        run: |
-          export OPENSSL_DIR=/usr/local/ssl
-          echo "OPENSSL_DIR=$OPENSSL_DIR" >> $GITHUB_ENV          
-
+      - uses: ./.github/actions/setup-release-env  
+      
       - name: Install musl-tools
         run: |
           sudo apt-get update -y
