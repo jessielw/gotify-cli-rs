@@ -1,5 +1,5 @@
 [package]
-name = "gotify-cli"
+name = "gotify-cli-rs"
 version = "0.1.0"
 edition = "2024"
 description = "Light CLI tool to send notifications to your Gotify server"
