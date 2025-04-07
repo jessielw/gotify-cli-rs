@@ -30,9 +30,9 @@ jobs:
           rustup target add ${{ env.LINUX_TARGET }}
           rustup target add ${{ env.LINUX_ARM_TARGET }}
 
-          cargo build --release --target ${{ env.LINUX_TARGET }} --no-default-features cargo build \
-          --config "target.${{ env.LINUX_ARM_TARGET }}.linker = 'aarch64-linux-gnu-gcc'" \
-          --release --target ${{ env.LINUX_ARM_TARGET }} --no-default-features
+          cargo build --release --target ${{ env.LINUX_TARGET }} --no-default-features
+          cargo build --config "target.${{ env.LINUX_ARM_TARGET }}.linker = 'aarch64-linux-gnu-gcc'" \
+            --release --target ${{ env.LINUX_ARM_TARGET }} --no-default-features
 
       - name: Create tarball and checksum
         run: |
